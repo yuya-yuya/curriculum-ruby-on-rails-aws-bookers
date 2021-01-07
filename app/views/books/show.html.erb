@@ -1,5 +1,9 @@
-<h4>Title</h4>:<%= @book.title %>
+<p id="notice">
+ <%=  notice %>
+</p>
 
-<h4>Body</h4>:<%= @book.body %>
+<strong>Title</strong>:<%= @book.title %><br>
+
+<strong>Body</strong>:<%= @book.body %>
 <br>
-<%= link_to "Edit", edit_book_path(@book) %>｜<%= link_to "Back", :back%>
+<%= link_to "Edit", edit_book_path(@book) %>｜<%= link_to "Back", books_path%>

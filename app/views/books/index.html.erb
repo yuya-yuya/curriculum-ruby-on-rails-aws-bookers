@@ -1,3 +1,4 @@
+<p><%= alert%></p>
 <h1>Books</h1>
 <table>
   <thead>
@@ -25,6 +26,14 @@
 
 <h2>New book</h2>
 <%= form_with model:@book, local:true do |f| %>
+<% if @book.errors.any? %>
+<h2><%= @book.errors.count%>errorsprohibited this book from being saved:</h2>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+<% end %>
 
   <h4>Title</h4>
   <%= f.text_field :title %>
